@@ -1,0 +1,123 @@
+#ddev-generated
+# If you remove the ddev-generated line above you
+# are responsible for maintaining this file. DDEV will not then
+# update it, for example if you add `additional_hostnames`, etc.
+
+http:
+  routers:
+    n9-web-80-http:
+      entrypoints:
+        - http-80
+      rule: HostRegexp(`^n9\.ddev\.site$`)
+      
+      service: "n9-web-80"
+      tls: false
+      # middlewares:
+      #   - "n9-redirectHttps"
+    n9-web-8025-http:
+      entrypoints:
+        - http-8025
+      rule: HostRegexp(`^n9\.ddev\.site$`)
+      
+      service: "n9-web-8025"
+      tls: false
+      # middlewares:
+      #   - "n9-redirectHttps"
+    n9-xhgui-80-http:
+      entrypoints:
+        - http-8143
+      rule: HostRegexp(`^n9\.ddev\.site$`)
+      
+      service: "n9-xhgui-80"
+      tls: false
+      # middlewares:
+      #   - "n9-redirectHttps"
+    n9-phpmyadmin-80-http:
+      entrypoints:
+        - http-8036
+      rule: HostRegexp(`^n9\.ddev\.site$`)
+      
+      service: "n9-phpmyadmin-80"
+      tls: false
+      # middlewares:
+      #   - "n9-redirectHttps"
+    
+    
+    
+    n9-web-80-https:
+      entrypoints:
+        - http-443
+      rule: HostRegexp(`^n9\.ddev\.site$`)
+      
+      service: "n9-web-80"
+      
+      tls: true
+      
+    n9-web-8025-https:
+      entrypoints:
+        - http-8026
+      rule: HostRegexp(`^n9\.ddev\.site$`)
+      
+      service: "n9-web-8025"
+      
+      tls: true
+      
+    
+    n9-xhgui-80-https:
+      entrypoints:
+        - http-8142
+      rule: HostRegexp(`^n9\.ddev\.site$`)
+      
+      service: "n9-xhgui-80"
+      
+      tls: true
+      
+    
+    n9-phpmyadmin-80-https:
+      entrypoints:
+        - http-8037
+      rule: HostRegexp(`^n9\.ddev\.site$`)
+      
+      service: "n9-phpmyadmin-80"
+      
+      tls: true
+      
+    
+
+  middlewares:
+    n9-redirectHttps:
+      redirectScheme:
+        scheme: https
+        permanent: true
+
+  services:
+    n9-web-80:
+      loadbalancer:
+        servers:
+          - url: http://ddev-n9-web:80
+        
+    n9-web-8025:
+      loadbalancer:
+        servers:
+          - url: http://ddev-n9-web:8025
+        
+    
+    
+    n9-xhgui-80:
+      loadbalancer:
+        servers:
+          - url: http://ddev-n9-xhgui:80
+        
+    
+    n9-phpmyadmin-80:
+      loadbalancer:
+        servers:
+          - url: http://ddev-n9-phpmyadmin:80
+        
+    
+    
+
+tls:
+  certificates:
+    - certFile: /mnt/ddev-global-cache/traefik/certs/n9.crt
+      keyFile: /mnt/ddev-global-cache/traefik/certs/n9.key
