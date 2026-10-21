@@ -1,0 +1,86 @@
+uuid: b7a3771a-4110-4aad-989f-7d9b8e21641a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.berita.field_fail_keratan_akhbar
+    - field.field.node.berita.field_foto_album
+    - field.field.node.berita.field_gambar_utama
+    - field.field.node.berita.field_jenis_kandungan
+    - field.field.node.berita.field_kandungan_berita
+    - field.field.node.berita.field_kapsyen_gambar
+    - field.field.node.berita.field_kategori_berita
+    - field.field.node.berita.field_kategori_ucapan
+    - field.field.node.berita.field_lampiran_media
+    - field.field.node.berita.field_lampiran_pdf
+    - field.field.node.berita.field_pautan_asal_berita
+    - field.field.node.berita.field_ringkasan_berita
+    - field.field.node.berita.field_sumber_akhbar
+    - field.field.node.berita.field_sumber_penulis
+    - field.field.node.berita.field_tarikh_penerbitan_berita
+    - node.type.berita
+  module:
+    - datetime
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.berita.teaser
+targetEntityType: node
+bundle: berita
+mode: teaser
+content:
+  field_gambar_utama:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_kategori_berita:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_ringkasan_berita:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_tarikh_penerbitan_berita:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: tarikh_balai_berita
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden:
+  field_fail_keratan_akhbar: true
+  field_foto_album: true
+  field_jenis_kandungan: true
+  field_kandungan_berita: true
+  field_kapsyen_gambar: true
+  field_kategori_ucapan: true
+  field_lampiran_media: true
+  field_lampiran_pdf: true
+  field_pautan_asal_berita: true
+  field_sumber_akhbar: true
+  field_sumber_penulis: true
+  search_api_excerpt: true
