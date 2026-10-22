@@ -11,8 +11,8 @@ field_name: field_gambar_utama
 entity_type: node
 bundle: berita
 label: 'Gambar Utama'
-description: 'muat naik gambar utama bagi berita ini'
-required: true
+description: 'Muat naik gambar utama bagi berita ini'
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

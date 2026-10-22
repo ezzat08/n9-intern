@@ -1,0 +1,18 @@
+uuid: c15cbdf0-5b95-42a1-b771-3c03313b23e7
+langcode: ms
+status: true
+dependencies:
+  config:
+    - node.type.berita
+id: node.berita.created
+field_name: created
+entity_type: node
+bundle: berita
+label: 'Dikarang pada'
+description: 'The date and time that the content was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

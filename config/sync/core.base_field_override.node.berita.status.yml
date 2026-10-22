@@ -1,0 +1,22 @@
+uuid: 3fc2dbeb-5786-44b1-a3dd-3117019ab401
+langcode: ms
+status: true
+dependencies:
+  config:
+    - node.type.berita
+id: node.berita.status
+field_name: status
+entity_type: node
+bundle: berita
+label: Diterbitkan
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: true
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: Tutup
+field_type: boolean

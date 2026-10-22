@@ -1,0 +1,18 @@
+uuid: 5dde380f-ce4c-4573-9921-4600b1e30d98
+langcode: ms
+status: true
+dependencies:
+  config:
+    - node.type.berita
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '1'
+id: node.berita
+target_entity_type_id: node
+target_bundle: berita
+default_langcode: site_default
+language_alterable: true

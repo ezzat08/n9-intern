@@ -5,6 +5,7 @@ dependencies:
   config:
     - node.type.berita
   module:
+    - language
     - node
 id: balai_berita_url_pattern
 label: 'Balai Berita URL Pattern'
@@ -18,6 +19,15 @@ selection_criteria:
       node: node
     bundles:
       berita: berita
+  c75b496b-1a60-470c-ab61-87bf02048596:
+    id: language
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    langcodes:
+      ms: ms
 selection_logic: and
 weight: -5
-relationships: {  }
+relationships:
+  'node:langcode:language':
+    label: Language
