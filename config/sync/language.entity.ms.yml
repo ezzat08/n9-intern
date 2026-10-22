@@ -1,0 +1,9 @@
+uuid: 1f3806d7-ed98-4c50-9d14-3c784933bef7
+langcode: en
+status: true
+dependencies: {  }
+id: ms
+label: Malay
+direction: ltr
+weight: 1
+locked: false

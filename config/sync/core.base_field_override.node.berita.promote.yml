@@ -1,0 +1,22 @@
+uuid: 3cadbb12-ec92-42ca-bdeb-8ea60db2ee08
+langcode: ms
+status: true
+dependencies:
+  config:
+    - node.type.berita
+id: node.berita.promote
+field_name: promote
+entity_type: node
+bundle: berita
+label: 'Dipromosikan ke laman depan'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: false
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: Tutup
+field_type: boolean
